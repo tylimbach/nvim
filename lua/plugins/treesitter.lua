@@ -29,6 +29,7 @@ return {
         "make",
         "cmake",
         "xml",
+        "toml",
       },
     },
   },
