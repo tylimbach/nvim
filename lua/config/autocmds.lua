@@ -2,6 +2,7 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
+-- csharp
 local augroup_cs = vim.api.nvim_create_augroup("csharp", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "*.cs",
@@ -15,9 +16,29 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- xaml
 local augroup_xaml = vim.api.nvim_create_augroup("xaml", { clear = true })
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.xaml",
   group = augroup_xaml,
   command = "setfiletype xml",
+})
+
+-- lsp
+local augroup_semantic_tokens = vim.api.nvim_create_augroup("lsp_semantic_tokens", { clear = true })
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = augroup_semantic_tokens,
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if not client == nil then
+      client.server_capabilities.semanticTokensProvider = nil
+    end
+  end,
+})
+
+-- colors
+local augroup_colors = vim.api.nvim_create_augroup("colors", { clear = true })
+vim.api.nvim_create_autocmd("ColorScheme", {
+  group = augroup_colors,
+  callback = vim.mycolors.set_terminal_colors,
 })

@@ -1,6 +1,8 @@
+vim.mycolors = vim.mycolors or {}
+
 vim.o.bg = "light"
 
-local function set_terminal_colors()
+vim.mycolors.set_terminal_colors = function()
   local colors = {
     dark_grey = "#282828",
     red = "#cc241d",
@@ -60,10 +62,6 @@ local function set_terminal_colors()
     )
   )
 end
-
--- Optionally, set this function to run after your colorscheme is loaded,
--- or call it directly at the appropriate place in your configuration.
-set_terminal_colors()
 
 return {
   -- lush used by zenbones

@@ -13,6 +13,8 @@ local palette
 if bg == "light" then
   palette = util.palette_extend({
     bg = hsluv("#fbf1c7"),
+    bg2 = hsluv("#eedaba"),
+    bg3 = hsluv("#ebdbb2"),
     fg = hsluv("#3c3836"),
     rose = hsluv("#9d0006"),
     leaf = hsluv("#79740e"),
@@ -48,6 +50,19 @@ local specs = lush.extends({ base_specs }).with(function()
     Type({ fg = palette.sky, gui = "None" }),
     Number({ fg = palette.fg }),
     WarningMsg({ base_specs.WarningMsg, fg = base_specs.Comment.fg }),
+    FlashBackdrop({ base_specs.FlashBackdrop, bg = palette.bg3 }),
+    FloatBorder({ base_specs.FloatBorder, bg = palette.sky }),
+    NormalFloat({ base_specs.NormalFloat, bg = palette.bg3 }),
+    StatusLine({ base_specs.StatusLine, bg = palette.bg }),
+    StatusLineNC({ base_specs.StatusLineNC, bg = palette.bg }),
+    Pmenu({ base_specs.Pmenu, bg = palette.bg3 }),
+    PmenuSel({ base_specs.CursorLine }),
+    PmenuSbar({ base_specs.CursorLine }),
+    DiagnosticVirtualTextError({ base_specs.DiagnosticVirtualTextError, bg = palette.bg }),
+    DiagnosticVirtualTextWarn({ base_specs.DiagnosticVirtualTextWarn, bg = palette.bg }),
+    DiagnosticVirtualTextInfo({ base_specs.DiagnosticVirtualTextInfo, bg = palette.bg }),
+    DiagnosticVirtualTextHint({ base_specs.DiagnosticVirtualTextHint, bg = palette.bg }),
+    DiagnosticVirtualTextOk({ base_specs.DiagnosticVirtualTextOk, bg = palette.bg }),
     --Comment({ WarningMsg, italics = true }),
   }
 end)
