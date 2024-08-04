@@ -14,6 +14,10 @@ vim.opt.colorcolumn = "120"
 vim.opt.cursorline = false
 vim.opt.termguicolors = true
 
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+
 if vim.g.neovide then
   vim.opt.guifont = "Iosevka Nerd Font:h15:#e-subpixelantialias"
   vim.g.neovide_position_animation_length = 0.15
