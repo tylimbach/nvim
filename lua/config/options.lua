@@ -17,10 +17,10 @@ vim.opt.termguicolors = true
 if vim.g.neovide then
   vim.opt.guifont = "Iosevka Nerd Font:h15:#e-subpixelantialias"
   vim.g.neovide_position_animation_length = 0.15
-  vim.g.neovide_scroll_animation_length = 0.20
+  vim.g.neovide_scroll_animation_length = 0.10
   vim.g.neovide_floating_shadow = true
   vim.g.neovide_floating_blur_amount_x = 2.0
   vim.g.neovide_floating_blur_amount_x = 2.0
   vim.g.neovide_cursor_animation_length = 0.05
-  vim.g.neovide_cursor_trail_size = 0.1 --0.5 ref
+  vim.g.neovide_cursor_trail_size = 0.0 --0.5 ref
 end
