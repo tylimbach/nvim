@@ -73,4 +73,4 @@ require("lazy").setup({
   },
 })
 
-require("colorizer").setup()
+require("nvim-highlight-colors").setup()
