@@ -63,6 +63,10 @@ local specs = lush.extends({ base_specs }).with(function()
     DiagnosticVirtualTextInfo({ base_specs.DiagnosticVirtualTextInfo, bg = palette.bg }),
     DiagnosticVirtualTextHint({ base_specs.DiagnosticVirtualTextHint, bg = palette.bg }),
     DiagnosticVirtualTextOk({ base_specs.DiagnosticVirtualTextOk, bg = palette.bg }),
+    RenderMarkdownCode({ bg = palette.bg3 }),
+    RenderMarkdownBullet({ bg = palette.bg3 }),
+    RenderMarkdownTableRow({ bg = palette.bg3 }),
+    Constant({ fg = palette.leaf }),
     --Comment({ WarningMsg, italics = true }),
   }
 end)
