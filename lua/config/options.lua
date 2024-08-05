@@ -19,7 +19,7 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 
 if vim.g.neovide then
-  vim.opt.guifont = "Iosevka Nerd Font:h15:#e-subpixelantialias"
+  -- vim.opt.guifont = "Iosevka Nerd Font:h15:#e-subpixelantialias"
   vim.g.neovide_position_animation_length = 0.15
   vim.g.neovide_scroll_animation_length = 0.10
   vim.g.neovide_floating_shadow = true
