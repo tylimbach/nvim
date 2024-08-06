@@ -61,7 +61,7 @@ vim.mycolors.set_terminal_colors = function()
   )
 end
 
-vim.o.bg = "dark"
+vim.o.bg = "light"
 
 return {
   -- lush used by zenbones
@@ -74,24 +74,9 @@ return {
   { "zenbones-theme/zenbones.nvim" },
 
   {
-    dir = "../../colors/gruvbones.lua",
-    config = function()
-      require("colors.gruvbones")
-    end,
-    lazy = true,
-  },
-  {
-    dir = "../../colors/mybones.lua",
-    config = function()
-      require("colors.mybones")
-    end,
-    lazy = true,
-  },
-
-  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "zenburned",
+      colorscheme = "mybones_colorful",
     },
   },
 }

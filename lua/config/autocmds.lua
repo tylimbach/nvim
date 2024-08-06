@@ -5,7 +5,7 @@
 -- csharp
 local augroup_cs = vim.api.nvim_create_augroup("csharp", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "*.cs",
+  pattern = "cs",
   group = augroup_cs,
   callback = function()
     vim.opt_local.expandtab = false
