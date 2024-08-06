@@ -30,6 +30,7 @@ return {
         "cmake",
         "xml",
         "toml",
+        "norg",
       },
     },
   },

@@ -1,7 +1,5 @@
 vim.mycolors = vim.mycolors or {}
 
-vim.o.bg = "light"
-
 vim.mycolors.set_terminal_colors = function()
   local colors = {
     dark_grey = "#282828",
@@ -63,6 +61,8 @@ vim.mycolors.set_terminal_colors = function()
   )
 end
 
+vim.o.bg = "dark"
+
 return {
   -- lush used by zenbones
   { "rktjmp/lush.nvim" },
@@ -91,7 +91,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "mybones",
+      colorscheme = "zenburned",
     },
   },
 }
