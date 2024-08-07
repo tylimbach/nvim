@@ -61,8 +61,6 @@ vim.mycolors.set_terminal_colors = function()
   )
 end
 
-vim.o.bg = "light"
-
 return {
   -- lush used by zenbones
   { "rktjmp/lush.nvim" },
