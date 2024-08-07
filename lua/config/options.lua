@@ -13,6 +13,9 @@ vim.opt.colorcolumn = "120"
 
 vim.opt.cursorline = false
 vim.opt.termguicolors = true
+-- todo: set shell for other OS
+vim.o.shell = 'C:/"Program Files"/Git/bin/bash.exe'
+vim.o.shellcmdflag = "-s"
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
