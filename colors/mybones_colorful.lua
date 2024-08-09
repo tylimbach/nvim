@@ -13,7 +13,7 @@ local palette
 if bg == "light" then
   palette = util.palette_extend({
     bg = hsluv("#fbf1c7"),
-    bg2 = hsluv("#ebdbb2"),
+    bg2 = hsluv("#f3dfb8"),
     fg = hsluv("#3c3836"),
     rose = hsluv("#9d0006"),
     leaf = hsluv("#79740e"),
@@ -26,7 +26,7 @@ if bg == "light" then
 else
   palette = util.palette_extend({
     bg = hsluv("#282828"),
-    bg2 = hsluv("#505050"),
+    bg2 = hsluv("#404040"),
     fg = hsluv("#ebdbb2"),
     rose = hsluv("#fb4934"),
     leaf = hsluv("#b8bb26"),
