@@ -2,7 +2,6 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
--- csharp
 local augroup_cs = vim.api.nvim_create_augroup("csharp", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "cs",
@@ -14,17 +13,17 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.softtabstop = 4
     vim.g.autoformat = false
   end,
+  desc = "Csharp Specific Formatting",
 })
 
--- xaml
 local augroup_xaml = vim.api.nvim_create_augroup("xaml", { clear = true })
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.xaml",
   group = augroup_xaml,
   command = "setfiletype xml",
+  desc = "Load xaml as xml",
 })
 
--- lsp
 local augroup_semantic_tokens = vim.api.nvim_create_augroup("lsp_semantic_tokens", { clear = true })
 vim.api.nvim_create_autocmd("LspAttach", {
   group = augroup_semantic_tokens,
@@ -32,11 +31,21 @@ vim.api.nvim_create_autocmd("LspAttach", {
     local client = vim.lsp.get_client_by_id(args.data.client_id)
     client.server_capabilities.semanticTokensProvider = nil
   end,
+  desc = "Disable Lsp Semantic Tokens",
 })
 
--- colors
 local augroup_colors = vim.api.nvim_create_augroup("colors", { clear = true })
 vim.api.nvim_create_autocmd("ColorScheme", {
   group = augroup_colors,
-  callback = vim.mycolors.set_terminal_colors,
+  callback = function()
+    vim.mycolors.set_terminal_colors()
+  end,
+  desc = "Update Terminal Colors",
+})
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  callback = function()
+    vim.opt.formatoptions:remove({ "c", "r", "o" })
+  end,
+  desc = "Disable New Line Comments",
 })
