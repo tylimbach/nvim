@@ -53,7 +53,7 @@ local specs = lush.extends({ base_specs }).with(function()
     -- Delimiter({ fg = palette.rose, gui = "None" }),
     Number({ fg = palette.sky }),
     WarningMsg({ base_specs.WarningMsg, fg = base_specs.Comment.fg }),
-    FlashBackdrop({ base_specs.FlashBackdrop, bg = palette.bg2 }),
+    FlashBackdrop({ base_specs.FlashBackdrop, bg = palette.bg }),
     FloatBorder({ base_specs.FloatBorder, bg = palette.sky }),
     NormalFloat({ base_specs.NormalFloat, bg = palette.bg2 }),
     StatusLine({ base_specs.StatusLine, bg = palette.bg }),
