@@ -30,4 +30,9 @@ if vim.g.neovide then
   vim.g.neovide_floating_blur_amount_x = 2.0
   vim.g.neovide_cursor_animation_length = 0.05
   vim.g.neovide_cursor_trail_size = 0.0 --0.5 ref
+  vim.g.neovide_transparency = 0.95
+  vim.g.transparent_groups = {}
+  -- transparency
+  vim.opt.winblend = 5
+  vim.opt.pumblend = 5
 end
