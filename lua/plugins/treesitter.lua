@@ -31,6 +31,7 @@ return {
         "xml",
         "toml",
         "norg",
+        "powershell",
       },
     },
   },
