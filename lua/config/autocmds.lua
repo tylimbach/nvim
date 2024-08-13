@@ -24,15 +24,15 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   desc = "Load xaml as xml",
 })
 
-local augroup_semantic_tokens = vim.api.nvim_create_augroup("lsp_semantic_tokens", { clear = true })
-vim.api.nvim_create_autocmd("LspAttach", {
-  group = augroup_semantic_tokens,
-  callback = function(args)
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    client.server_capabilities.semanticTokensProvider = nil
-  end,
-  desc = "Disable Lsp Semantic Tokens",
-})
+-- local augroup_semantic_tokens = vim.api.nvim_create_augroup("lsp_semantic_tokens", { clear = true })
+-- vim.api.nvim_create_autocmd("LspAttach", {
+--   group = augroup_semantic_tokens,
+--   callback = function(args)
+--     local client = vim.lsp.get_client_by_id(args.data.client_id)
+--     client.server_capabilities.semanticTokensProvider = nil
+--   end,
+--   desc = "Disable Lsp Semantic Tokens",
+-- })
 
 local augroup_colors = vim.api.nvim_create_augroup("colors", { clear = true })
 vim.api.nvim_create_autocmd("ColorScheme", {

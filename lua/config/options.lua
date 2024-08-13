@@ -35,4 +35,6 @@ if vim.g.neovide then
   -- transparency
   vim.opt.winblend = 5
   vim.opt.pumblend = 5
+
+  vim.opt.linespace = 1
 end
