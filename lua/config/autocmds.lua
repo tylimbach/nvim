@@ -16,6 +16,20 @@ vim.api.nvim_create_autocmd("FileType", {
   desc = "Csharp Specific Formatting",
 })
 
+local augroup_ps = vim.api.nvim_create_augroup("ps", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "ps1",
+  group = augroup_ps,
+  callback = function()
+    vim.opt_local.expandtab = false
+    vim.opt_local.tabstop = 4
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.softtabstop = 4
+    vim.g.autoformat = false
+  end,
+  desc = "PowerShell Specific Formatting",
+})
+
 local augroup_xaml = vim.api.nvim_create_augroup("xaml", { clear = true })
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.xaml",

@@ -20,6 +20,7 @@ vim.o.shellcmdflag = "-s"
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 4
+vim.g.autoformat = false
 
 if vim.g.neovide then
   -- vim.opt.guifont = "Iosevka Nerd Font:h15:#e-subpixelantialias"
