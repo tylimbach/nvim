@@ -11,6 +11,7 @@ return {
       },
       filewatching = false, -- try disabling if slow
       autoformat = false,
+      single_file_mode = true,
     },
   },
 
