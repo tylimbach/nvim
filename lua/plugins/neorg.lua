@@ -23,11 +23,11 @@ return {
             strategy = "flat",
           },
         },
-        ["core.completion"] = {
-          config = {
-            engine = "nvim-cmp",
-          },
-        },
+        -- ["core.completion"] = {
+        --   config = {
+        --     engine = "nvim-cmp",
+        --   },
+        -- },
       },
     },
     config = true,

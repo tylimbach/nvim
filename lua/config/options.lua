@@ -22,6 +22,8 @@ vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 4
 vim.g.autoformat = false
 
+vim.g.snacks_animate = false
+
 if vim.g.neovide then
   -- vim.opt.guifont = "Iosevka Nerd Font:h15:#e-subpixelantialias"
   vim.g.neovide_position_animation_length = 0.15
