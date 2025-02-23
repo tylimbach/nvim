@@ -11,6 +11,10 @@ require("neo-tree").setup({
         ["/"] = "noop", -- disable fuzzy finder, should fallback to normal search
       },
     },
+    filtered_items = {
+      visible = true,
+    },
+    max_items = 2000,
   },
 })
 
