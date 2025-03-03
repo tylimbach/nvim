@@ -10,7 +10,7 @@ return {
       --   "dotnet",
       --   "C:/Program Files/Microsoft.CodeAnalysis.LanguageServer/content/LanguageServer/win-x64/Microsoft.CodeAnalysis.LanguageServer.dll",
       -- },
-      -- filewatching = false, -- try disabling if slow
+      filewatching = false, -- try disabling if slow
       -- autoformat = false,
       -- single_file_mode = true,
       lock_target = true,
