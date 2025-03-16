@@ -1,6 +1,6 @@
 return {
   {
-    "bugabinga/auto-dark-mode.nvim",
+	"f-person/auto-dark-mode.nvim",
     opts = {
       update_interval = 1000,
       set_dark_mode = function()
@@ -11,6 +11,7 @@ return {
         vim.api.nvim_set_option_value("background", "light", {})
         vim.mycolors.set_terminal_colors()
       end,
+	fallback = "dark",
     },
   },
 }
