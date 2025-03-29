@@ -1,5 +1,5 @@
 return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
-	version = "4.4.7",
+	-- version = "4.4.7",
 }

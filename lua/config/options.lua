@@ -5,17 +5,18 @@
 --[[
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.updatetime = 750
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.colorcolumn = "120"
 --]]
-
+vim.opt.updatetime = 2000
 vim.opt.cursorline = false
 vim.opt.termguicolors = true
--- todo: set shell for other OS
-vim.o.shell = 'C:/"Program Files"/Git/bin/bash.exe'
-vim.o.shellcmdflag = "-s"
+
+if vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
+	vim.o.shell = 'C:/"Program Files"/Git/bin/bash.exe'
+	vim.o.shellcmdflag = "-s"
+end
 
 vim.opt.expandtab = false
 vim.opt.tabstop = 4
@@ -24,6 +25,7 @@ vim.opt.softtabstop = 4
 vim.g.autoformat = false
 
 vim.g.snacks_animate = false
+vim.g.ai_cmp = false
 
 if vim.g.neovide then
   -- vim.opt.guifont = "Iosevka Nerd Font:h15:#e-subpixelantialias"
@@ -34,10 +36,11 @@ if vim.g.neovide then
   vim.g.neovide_floating_blur_amount_x = 2.0
   vim.g.neovide_cursor_animation_length = 0.05
   vim.g.neovide_cursor_trail_size = 0.0 --0.5 ref
-  vim.g.neovide_transparency = 1.0
+  vim.g.neovide_opacity = 1.0
   vim.g.transparent_groups = {}
   -- transparency
   vim.opt.winblend = 3
   vim.opt.pumblend = 3
   vim.opt.linespace = 3
 end
+
