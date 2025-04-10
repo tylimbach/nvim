@@ -71,7 +71,7 @@ return {
 			terminal_colors = true, -- add neovim terminal colors
 			undercurl = true,
 			underline = true,
-			bold = true,
+			bold = false,
 			italic = {
 				strings = true,
 				emphasis = true,
@@ -91,6 +91,9 @@ return {
 				LspReferenceText = { bg = "#ebdbb2" },
 				LspReferenceWrite = { bg = "#ebdbb2" },
 				LspReferenceRead = { bg = "#ebdbb2" },
+				-- Operator = { fg = "#282828" },
+				-- ["@constructor.lua"] = { fg = "#282828" },
+				-- ["@punctuation.bracket.lua"] = { fg = "#282828" },
 			},
 			dim_inactive = false,
 			transparent_mode = false,

@@ -22,6 +22,7 @@ vim.opt.expandtab = false
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
+vim.opt.list = false
 vim.g.autoformat = false
 
 vim.g.snacks_animate = false
