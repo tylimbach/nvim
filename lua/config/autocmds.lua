@@ -125,6 +125,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+	pattern = "/dev/shm/gopass*",
+	callback = function()
+		vim.opt_local.swapfile = false
+		vim.opt_local.backup = false
+		vim.opt_local.undofile = false
+		vim.opt_local.shadafile = ""
+	end,
+})
+
 vim.api.nvim_create_user_command("ToggleSemanticHighlight", toggle_semantic_highlights, {})
 vim.keymap.set("n", "<leader>ts", toggle_semantic_highlights, { desc = "Toggle Semantic Highlighting" })
 

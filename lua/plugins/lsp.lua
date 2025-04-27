@@ -34,6 +34,11 @@ return {
 					enabled = false,
 					mason = false,
 				},
+				basedpyright = {
+					analysis = {
+						diagnosticMode = "workspace",
+					},
+				},
 				-- xml
 				lemminx = {},
 			},

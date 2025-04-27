@@ -9,6 +9,9 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.colorcolumn = "120"
 --]]
+
+vim.g.lazyvim_python_lsp = "basedpyright"
+
 vim.opt.updatetime = 2000
 vim.opt.cursorline = false
 vim.opt.termguicolors = true
