@@ -185,10 +185,22 @@ return {
 
 	{ "zenbones-theme/zenbones.nvim" },
 
+	{ "yorickpeterse/vim-paper" },
+
+	{ "yorik1984/newpaper.nvim" },
+
+	{ "cvigilv/patana.nvim" },
+
+	{ 'aliqyan-21/darkvoid.nvim' },
+
+	{ 'ajgrf/parchment' },
+
+	{ 'ntk148v/komau.vim' },
+
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "rose-pine",
+			colorscheme = "zenbones",
 		},
 	},
 }
