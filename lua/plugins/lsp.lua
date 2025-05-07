@@ -17,6 +17,18 @@ return {
 		},
 	},
 
+	-- Override Mason configuration to add custom registry
+	{
+		"williamboman/mason.nvim",
+		opts = function(_, opts)
+		opts.registries = {
+			"github:mason-org/mason-registry",
+			"github:Crashdummyy/mason-registry",
+		}
+		return opts
+		end,
+	},
+
 	-- overriden lsp configs
 	{
 		"neovim/nvim-lspconfig",
