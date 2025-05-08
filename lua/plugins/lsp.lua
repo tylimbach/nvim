@@ -20,6 +20,7 @@ return {
 	-- Override Mason configuration to add custom registry
 	{
 		"williamboman/mason.nvim",
+		version = "^1.0.0", -- workaround for 2.0 breaking changes
 		opts = function(_, opts)
 		opts.registries = {
 			"github:mason-org/mason-registry",
@@ -28,6 +29,9 @@ return {
 		return opts
 		end,
 	},
+
+	-- workaround for 2.0 breaking changes
+	{ "williamboman/mason-lspconfig.nvim", version = "^1.0.0" },
 
 	-- overriden lsp configs
 	{
