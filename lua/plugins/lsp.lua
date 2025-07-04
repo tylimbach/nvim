@@ -57,6 +57,10 @@ return {
 				},
 				-- xml
 				lemminx = {},
+				sourcekit = {
+					filetypes = { "swift", "objective-c", "objective-cpp" },
+					cmd = { "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp" },
+				},
 			},
 			inlay_hints = { enabled = true },
 		},
