@@ -3,6 +3,7 @@ return {
 	{
 		"seblyng/roslyn.nvim",
 		name = "roslyn",
+		commit = "7f8c18c6aac3667e0c0ec1aa30ecc77d3d36807f",
 		ft = "cs",
 		opts = {
 			-- config = {},
@@ -11,8 +12,7 @@ return {
 			--   "C:/Program Files/Microsoft.CodeAnalysis.LanguageServer/content/LanguageServer/win-x64/Microsoft.CodeAnalysis.LanguageServer.dll",
 			-- },
 			filewatching = "roslyn", -- try disabling if slow
-			-- autoformat = false,
-			-- single_file_mode = true,
+			single_file_mode = false,
 			lock_target = true,
 		},
 	},
@@ -20,7 +20,7 @@ return {
 	-- Override Mason configuration to add custom registry
 	{
 		"williamboman/mason.nvim",
-		version = "^1.0.0", -- workaround for 2.0 breaking changes
+		-- version = "^1.0.0", -- workaround for 2.0 breaking changes
 		opts = function(_, opts)
 		opts.registries = {
 			"github:mason-org/mason-registry",
@@ -31,7 +31,7 @@ return {
 	},
 
 	-- workaround for 2.0 breaking changes
-	{ "williamboman/mason-lspconfig.nvim", version = "^1.0.0" },
+	-- { "williamboman/mason-lspconfig.nvim" },
 
 	-- overriden lsp configs
 	{
@@ -50,6 +50,10 @@ return {
 				-- 	enabled = true,
 				-- 	mason = true,
 				-- },
+				roslyn_ls = {
+					enabled = false,
+					mason = false,
+				},
 				basedpyright = {
 					analysis = {
 						diagnosticMode = "workspace",
