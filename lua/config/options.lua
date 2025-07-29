@@ -10,8 +10,6 @@ vim.opt.undofile = true
 vim.opt.colorcolumn = "120"
 --]]
 
-vim.g.lazyvim_python_lsp = "basedpyright"
-
 vim.opt.guicursor = "i-ci-ve:ver25,r-cr-o:hor20,a:blinkwait0-blinkoff0-blinkon0"
 vim.opt.updatetime = 2000
 vim.opt.cursorline = false

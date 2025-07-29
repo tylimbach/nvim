@@ -15,6 +15,7 @@ return {
 		opts = function()
 			return {
 				adapters = {
+					-- log_level = "TRACE",
 					anthropic = function()
 						return require("codecompanion.adapters").extend("anthropic", {
 							env = { api_key = "cmd:gopass show -o personal/Anthropic_API" },
@@ -22,7 +23,7 @@ return {
 					end,
 					copilot = function()
 						return require("codecompanion.adapters").extend("copilot", {
-							schema = { model = { default = "claude-3.7-sonnet" } },
+							schema = { model = { default = "gpt-4o" } },
 						})
 					end,
 					deepseek = function()

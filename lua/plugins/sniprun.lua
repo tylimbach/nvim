@@ -17,7 +17,7 @@ return {
 				},
 				interpreter_options = {
 					Python3_fifo = {
-						interpreter = "python",
+						interpreter = "python3",
 						venv = vim.env.VIRTUAL_ENV,
 					},
 				},
