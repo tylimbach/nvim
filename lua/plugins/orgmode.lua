@@ -5,7 +5,6 @@ return {
 	config = function()
 		local org = require('orgmode')
 
-		org.setup_ts_grammar()
 		org.setup({
 			org_agenda_files = "~/orgfiles/**/*",
 			org_default_notes_file = "~/orgfiles/refile.org",
