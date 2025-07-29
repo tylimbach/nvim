@@ -7,7 +7,7 @@ return {
 			{
 				"Davidyz/VectorCode",
 				version      = "*",
-				build        = "uv upgrade vectorcode",
+				build        = "uv tool upgrade vectorcode",
 				dependencies = { "nvim-lua/plenary.nvim" },
 			},
 			"folke/which-key.nvim",
