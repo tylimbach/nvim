@@ -10,10 +10,9 @@ return {
 		config = function()
 			require("sniprun").setup({
 				selected_interpreters = { "Python3_fifo" },
-				repl_enable = { "Python3_fifo" },
+				repl_enable = { "Python3_fifo", "Julia_original" },
 				display = {
-					"VirtualLine",
-					"Classic",
+					"TerminalWithCode",
 				},
 				interpreter_options = {
 					Python3_fifo = {

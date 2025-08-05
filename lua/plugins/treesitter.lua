@@ -32,6 +32,8 @@ return {
         "toml",
         "powershell",
         "norg",
+		"julia",
+		"swift",
       },
     },
   },

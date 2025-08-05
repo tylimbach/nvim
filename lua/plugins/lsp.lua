@@ -54,23 +54,41 @@ return {
 					enabled = false,
 					mason = false,
 				},
-				basedpyright = {
-					analysis = {
-						diagnosticMode = "workspace",
+				-- basedpyright = {
+				-- 	analysis = {
+				-- 		diagnosticMode = "workspace",
+				-- 	},
+				-- },
+				julials = {
+					mason = false,
+					cmd = {
+						"julia",
+						"--project=@nvim-lspconfig",
+						"--startup-file=no",
+						"--history-file=no",
+						"-e", [[
+							using LanguageServer, SymbolServer;
+							env = get(ENV, "JULIA_PROJECT", "@nvim-lspconfig");
+							server = LanguageServer.LanguageServerInstance(stdin, stdout, env);
+							server.runlinter = true;
+							run(server);
+						]]
 					},
+					filetypes = { "julia" },
+					-- root_dir = require("lspconfig.util").find_git_ancestor,
 				},
 				-- xml
 				lemminx = {},
 				sourcekit = {
 					filetypes = { "swift", "objective-c", "objective-cpp" },
-					cmd = {
-						"/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp"
-					},
-					cmd_env = {
-						DEVELOPER_DIR = "/Applications/Xcode-beta.app/Contents/Developer",
-						SDKROOT = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk",
-						MACOSX_DEPLOYMENT_TARGET = "14.0",
-					},
+					-- cmd = {
+					-- 	"/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp"
+					-- },
+					-- cmd_env = {
+					-- 	DEVELOPER_DIR = "/Applications/Xcode-beta.app/Contents/Developer",
+					-- 	SDKROOT = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk",
+					-- 	MACOSX_DEPLOYMENT_TARGET = "14.0",
+					-- },
 				},
 			},
 			inlay_hints = { enabled = true },

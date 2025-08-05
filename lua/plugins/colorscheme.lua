@@ -88,9 +88,9 @@ return {
 			contrast = "", -- can be "hard", "soft" or empty string
 			palette_overrides = {},
 			overrides = {
-				LspReferenceText = { bg = "#ebdbb2" },
-				LspReferenceWrite = { bg = "#ebdbb2" },
-				LspReferenceRead = { bg = "#ebdbb2" },
+				-- LspReferenceText = { bg = "#ebdbb2" },
+				-- LspReferenceWrite = { bg = "#ebdbb2" },
+				-- LspReferenceRead = { bg = "#ebdbb2" },
 				-- Operator = { fg = "#282828" },
 				-- ["@constructor.lua"] = { fg = "#282828" },
 				-- ["@punctuation.bracket.lua"] = { fg = "#282828" },
