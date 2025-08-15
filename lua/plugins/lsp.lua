@@ -3,7 +3,7 @@ return {
 	{
 		"seblyng/roslyn.nvim",
 		name = "roslyn",
-		commit = "7f8c18c6aac3667e0c0ec1aa30ecc77d3d36807f",
+		-- commit = "7f8c18c6aac3667e0c0ec1aa30ecc77d3d36807f", -- lock target seems broken in recent
 		ft = "cs",
 		opts = {
 			-- config = {},
