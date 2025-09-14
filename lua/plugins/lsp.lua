@@ -118,14 +118,14 @@ return {
 				lemminx = {},
 				sourcekit = {
 					filetypes = { "swift", "objective-c", "objective-cpp" },
-					-- cmd = {
-					-- 	"/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp"
-					-- },
-					-- cmd_env = {
-					-- 	DEVELOPER_DIR = "/Applications/Xcode-beta.app/Contents/Developer",
-					-- 	SDKROOT = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk",
-					-- 	MACOSX_DEPLOYMENT_TARGET = "14.0",
-					-- },
+					cmd = {
+						"/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp"
+					},
+					cmd_env = {
+						DEVELOPER_DIR = "/Applications/Xcode-beta.app/Contents/Developer",
+						SDKROOT = "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk",
+						MACOSX_DEPLOYMENT_TARGET = "14.0",
+					},
 				},
 			},
 			inlay_hints = { enabled = true },
