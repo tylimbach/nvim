@@ -33,7 +33,7 @@ return {
 
 	-- Override Mason configuration to add custom registry
 	{
-		"williamboman/mason.nvim",
+		"mason-org/mason.nvim",
 		-- version = "^1.0.0", -- workaround for 2.0 breaking changes
 		opts = function(_, opts)
 		opts.registries = {

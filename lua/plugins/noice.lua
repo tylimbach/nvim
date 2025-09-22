@@ -5,7 +5,7 @@ return {
 		opts = {
 			lsp = {
 				progress = {
-					enabled = false, -- Disable LSP progress
+					-- enabled = false, -- Disable LSP progress
 				},
 			},
 		},
