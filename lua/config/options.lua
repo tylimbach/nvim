@@ -46,3 +46,81 @@ if vim.g.neovide then
   vim.opt.linespace = 3
 end
 
+vim.g.dadbod_debug = 1
+
+local function add_all_dbs(dbs, name, server)
+	local cmd = [[sqlcmd -S "]]..server..[[" -E -h-1 -W -Q "SET NOCOUNT ON;SELECT name FROM sys.databases WHERE state=0 ORDER BY name"]]
+	local fh = io.popen(cmd)
+	if not fh then
+		print("Failed to open pipe for sqlcmd")
+		return
+	end
+
+	local count = 0
+	for line in fh:lines() do
+		local db = line:gsub("\r",""):match("^%s*(.-)%s*$")  -- trim spaces and \r
+		if db ~= "" then
+			table.insert(dbs, {
+				name = name .. "/" .. db,
+				url  = "sqlserver://" .. server .. "?database=" .. db
+			})
+			count = count + 1
+		end
+	end
+	fh:close()
+
+	print(("Total databases added for %s: %d"):format(server, count))
+end
+
+local cache_path = vim.fn.stdpath("cache") .. "/dbs.json"
+
+local function load_dbs_cache()
+    local f = io.open(cache_path, "r")
+    if f then
+        local content = f:read("*a")
+        f:close()
+        local ok, data = pcall(vim.json.decode, content)
+        if ok and type(data) == "table" then
+            return data
+        end
+    end
+    return nil
+end
+
+local function save_dbs_cache(dbs)
+    local f = io.open(cache_path, "w")
+    if f then
+        f:write(vim.json.encode(dbs))
+        f:close()
+    end
+end
+
+local dbs = load_dbs_cache() or {}
+vim.g.dbs = dbs
+
+local function load_env_file(path)
+    local f = io.open(path, "r")
+    if not f then return end
+    for line in f:lines() do
+        local key, value = line:match("^%s*([%w_]+)%s*=%s*(.-)%s*$")
+        if key and value then
+            vim.fn.setenv(key, value)
+        end
+    end
+    f:close()
+end
+
+local env_path = vim.fn.stdpath("config") .. "/.env"
+vim.api.nvim_create_user_command("RescanDbs", function()
+	load_env_file(env_path)
+	local dbs = {}
+	for k, v in pairs(vim.fn.environ()) do
+		if k:match("^WT_DB_") and v and v ~= "" then
+			add_all_dbs(dbs, v, v)
+		end
+	end
+    save_dbs_cache(dbs)
+    vim.g.dbs = dbs
+    print("Database cache updated!")
+end, {})
+
