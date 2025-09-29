@@ -30,6 +30,34 @@
 --   desc = "PowerShell Specific Formatting",
 -- })
 
+-- CMake files should use spaces (2 spaces is standard)
+local augroup_cmake = vim.api.nvim_create_augroup("cmake", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "cmake",
+  group = augroup_cmake,
+  callback = function()
+    vim.opt_local.expandtab = true
+    vim.opt_local.tabstop = 2
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.softtabstop = 2
+  end,
+  desc = "CMake Specific Formatting (spaces)",
+})
+
+-- Python files should use spaces (PEP 8 standard)
+local augroup_python = vim.api.nvim_create_augroup("python", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  group = augroup_python,
+  callback = function()
+    vim.opt_local.expandtab = true
+    vim.opt_local.tabstop = 4
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.softtabstop = 4
+  end,
+  desc = "Python Specific Formatting (spaces)",
+})
+
 -- local augroup_semantic_tokens = vim.api.nvim_create_augroup("lsp_semantic_tokens", { clear = true })
 -- vim.api.nvim_create_autocmd("LspAttach", {
 --   group = augroup_semantic_tokens,
